@@ -30,7 +30,7 @@ st.set_page_config(
 # ── CUSTOM CSS — refined dark-navy & gold professional theme ──────────────────
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
 
 html, body, [class*="css"] {
     font-family: 'DM Sans', sans-serif;
