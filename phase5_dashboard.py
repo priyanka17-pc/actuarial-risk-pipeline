@@ -27,123 +27,62 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ── CUSTOM CSS — refined dark-navy & gold professional theme ──────────────────
+# ── CUSTOM CSS ───────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-html, body {
-    font-family: 'DM Sans', sans-serif;
-    color: #1a1a2e;
-}
-/* Main content text */
-.main .block-container p,
-.main .block-container span,
-.main .block-container label,
-.main .block-container .stMarkdown {
-    color: #1a1a2e !important;
-}
 
-/* Main background */
-.stApp {
-    background-color: #F7F8FC;
-}
-
-/* Sidebar */
+/* ── SIDEBAR ONLY ── */
 [data-testid="stSidebar"] {
     background: linear-gradient(160deg, #0f1f3d 0%, #1a3560 100%);
     border-right: 1px solid #2a4a7f;
 }
-[data-testid="stSidebar"] * {
+[data-testid="stSidebar"] .stMarkdown p,
+[data-testid="stSidebar"] .stMarkdown li,
+[data-testid="stSidebar"] .stMarkdown span,
+[data-testid="stSidebar"] label {
     color: #e8edf5 !important;
 }
 [data-testid="stSidebar"] h1,
 [data-testid="stSidebar"] h2,
-[data-testid="stSidebar"] h3 {
-    color: #f0c040 !important;
-    font-family: 'Playfair Display', serif !important;
-}
+[data-testid="stSidebar"] h3,
 [data-testid="stSidebar"] strong {
     color: #f0c040 !important;
 }
 [data-testid="stSidebar"] hr {
     border-color: #2a4a7f !important;
 }
-
-/* Main title area */
-.main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.6rem;
-    font-weight: 700;
-    color: #0f1f3d;
-    letter-spacing: -0.5px;
-    margin-bottom: 0;
-}
-.main-subtitle {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1.05rem;
-    color: #5a6a8a;
-    font-weight: 300;
-    margin-top: 4px;
-    margin-bottom: 20px;
+[data-testid="stSidebar"] em {
+    color: #c8d4e8 !important;
 }
 
-/* Section headers */
-h2, h3 {
-    font-family: 'Playfair Display', serif !important;
+/* ── MAIN CONTENT TEXT ── */
+.main .stMarkdown p,
+.main .stMarkdown li,
+.main .stMarkdown h1,
+.main .stMarkdown h2,
+.main .stMarkdown h3 {
     color: #0f1f3d !important;
 }
 
-/* Metric cards */
-[data-testid="metric-container"] {
-    background: white;
-    border: 1px solid #e0e6f0;
-    border-radius: 12px;
-    padding: 16px 20px !important;
-    box-shadow: 0 2px 8px rgba(15,31,61,0.06);
-}
-[data-testid="metric-container"] label {
-    font-size: 0.78rem !important;
-    font-weight: 600 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.8px !important;
-    color: #5a6a8a !important;
-}
-[data-testid="metric-container"] [data-testid="stMetricValue"] {
-    font-family: 'Playfair Display', serif !important;
-    font-size: 2rem !important;
-    color: #0f1f3d !important;
-}
-
-/* Buttons */
+/* ── BUTTONS ── */
 .stButton > button {
     background: linear-gradient(135deg, #0f1f3d 0%, #1a3560 100%) !important;
     color: #f0c040 !important;
-    font-family: 'DM Sans', sans-serif !important;
     font-weight: 600 !important;
-    font-size: 1rem !important;
-    letter-spacing: 0.5px !important;
     border: none !important;
     border-radius: 8px !important;
     padding: 12px 28px !important;
-    transition: all 0.2s ease !important;
     box-shadow: 0 4px 12px rgba(15,31,61,0.25) !important;
 }
-.stButton > button:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 6px 20px rgba(15,31,61,0.35) !important;
-}
 
-/* Tabs */
+/* ── TABS ── */
 .stTabs [data-baseweb="tab-list"] {
     background: white !important;
     border-radius: 10px !important;
     padding: 4px !important;
     border: 1px solid #e0e6f0 !important;
-    gap: 4px !important;
 }
 .stTabs [data-baseweb="tab"] {
-    font-family: 'DM Sans', sans-serif !important;
-    font-weight: 500 !important;
-    font-size: 0.95rem !important;
     color: #5a6a8a !important;
     border-radius: 8px !important;
     padding: 10px 24px !important;
@@ -153,59 +92,34 @@ h2, h3 {
     color: #f0c040 !important;
 }
 
-/* Sliders */
-[data-testid="stSlider"] label {
-    font-weight: 500 !important;
-    color: #2c3e6b !important;
-    font-size: 0.9rem !important;
+/* ── METRIC CARDS ── */
+[data-testid="metric-container"] {
+    background: white;
+    border: 1px solid #e0e6f0;
+    border-radius: 12px;
+    padding: 16px 20px !important;
+    box-shadow: 0 2px 8px rgba(15,31,61,0.06);
 }
 
-/* Inputs */
-.stSelectbox label, .stSlider label {
-    font-weight: 500 !important;
-    color: #2c3e6b !important;
+/* ── PAGE BACKGROUND ── */
+.stApp {
+    background-color: #F7F8FC;
 }
 
-/* Success / info boxes */
-.stSuccess {
-    background: #e8f5e9 !important;
-    border-left: 4px solid #2e7d32 !important;
-    border-radius: 8px !important;
-}
-
-/* Divider */
+/* ── DIVIDER ── */
 hr {
     border-color: #e0e6f0 !important;
     margin: 24px 0 !important;
 }
 
-/* Cards */
-.info-card {
-    background: white;
-    border-radius: 12px;
-    padding: 24px;
-    border: 1px solid #e0e6f0;
-    box-shadow: 0 2px 8px rgba(15,31,61,0.05);
-    margin-bottom: 16px;
-}
-
-/* Risk score display */
-.risk-display {
-    border-radius: 16px;
-    padding: 32px 24px;
-    text-align: center;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-}
-
-/* Footer */
+/* ── FOOTER ── */
 .footer-text {
     text-align: center;
     color: #9aa5be;
     font-size: 0.82rem;
-    font-family: 'DM Sans', sans-serif;
-    letter-spacing: 0.3px;
     padding: 20px 0 8px 0;
 }
+
 </style>
 """, unsafe_allow_html=True)
 
