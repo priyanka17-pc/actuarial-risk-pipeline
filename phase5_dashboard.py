@@ -30,8 +30,11 @@ st.set_page_config(
 # ── CUSTOM CSS — refined dark-navy & gold professional theme ──────────────────
 st.markdown("""
 <style>
-html, body, [class*="css"] {
+html, body {
     font-family: 'DM Sans', sans-serif;
+}
+p, span, div, label {
+    color: #1a1a2e;
 }
 
 /* Main background */
