@@ -30,8 +30,6 @@ st.set_page_config(
 # ── CUSTOM CSS — refined dark-navy & gold professional theme ──────────────────
 st.markdown("""
 <style>
-
-
 html, body, [class*="css"] {
     font-family: 'DM Sans', sans-serif;
 }
@@ -340,9 +338,9 @@ with tab1:
         for col in feature_cols:
             if col in df_orig.columns:
                 if pd.api.types.is_numeric_dtype(df_orig[col]):
-    input_row[col] = df_orig[col].median()
-else:
-    input_row[col] = 0
+                    input_row[col] = df_orig[col].median()
+                else:
+                    input_row[col] = 0
             else:
                 input_row[col] = 0
 
