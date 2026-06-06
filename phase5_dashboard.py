@@ -339,10 +339,10 @@ with tab1:
         input_row = {}
         for col in feature_cols:
             if col in df_orig.columns:
-                if df_orig[col].dtype == object:
-                    input_row[col] = 0
-                else:
-                    input_row[col] = df_orig[col].median()
+                if pd.api.types.is_numeric_dtype(df_orig[col]):
+    input_row[col] = df_orig[col].median()
+else:
+    input_row[col] = 0
             else:
                 input_row[col] = 0
 
