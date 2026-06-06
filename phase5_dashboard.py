@@ -204,7 +204,7 @@ hr {
 """, unsafe_allow_html=True)
 
 # ── PATH ──────────────────────────────────────────────────────────────────────
-PROJECT_DIR = r"C:\Users\Priyanka Choudhury\Downloads\FINAL YEAR PROJECT"
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # =============================================================================
 # LOAD MODEL AND METADATA
