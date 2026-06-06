@@ -33,9 +33,6 @@ st.markdown("""
 [data-testid="stSidebar"] {
     background: linear-gradient(160deg, #0f1f3d 0%, #1a3560 100%);
 }
-[data-testid="stSidebar"] hr {
-    border-color: #2a4a7f !important;
-}
 .stTabs [aria-selected="true"] {
     background: linear-gradient(135deg, #0f1f3d, #1a3560) !important;
     color: #f0c040 !important;
@@ -46,9 +43,6 @@ st.markdown("""
     font-weight: 600 !important;
     border: none !important;
     border-radius: 8px !important;
-}
-.stApp {
-    background-color: #F7F8FC;
 }
 </style>
 """, unsafe_allow_html=True)
