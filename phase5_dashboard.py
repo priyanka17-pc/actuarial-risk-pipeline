@@ -32,9 +32,14 @@ st.markdown("""
 <style>
 html, body {
     font-family: 'DM Sans', sans-serif;
-}
-p, span, div, label {
     color: #1a1a2e;
+}
+/* Main content text */
+.main .block-container p,
+.main .block-container span,
+.main .block-container label,
+.main .block-container .stMarkdown {
+    color: #1a1a2e !important;
 }
 
 /* Main background */
@@ -328,7 +333,7 @@ with tab1:
     st.markdown("")
     btn_col, _, _ = st.columns([1, 3, 3])
     with btn_col:
-        predict_btn = st.button("🔍  Predict Risk Score", use_container_width=True)
+        predict_btn = st.button("🔍  Predict Risk Score", width='stretch')
 
     # ── PREDICTION OUTPUT ─────────────────────────────────────────────────────
     if predict_btn:
@@ -441,7 +446,7 @@ with tab1:
                 paper_bgcolor="white",
                 margin=dict(t=50, b=40, l=40, r=20)
             )
-            st.plotly_chart(fig_prob, use_container_width=True)
+            st.plotly_chart(fig_prob, width='stretch')
 
             # SHAP explanation
             try:
@@ -480,7 +485,7 @@ with tab1:
                     paper_bgcolor="white",
                     margin=dict(t=50, b=40, l=160, r=60)
                 )
-                st.plotly_chart(fig_shap, use_container_width=True)
+                st.plotly_chart(fig_shap, width='stretch')
                 st.caption("🔴 Red = pushes risk score **higher**   🔵 Blue = pushes risk score **lower**")
 
             except Exception as e:
@@ -512,7 +517,7 @@ with tab2:
     st.markdown("")
     sim_col, _, _ = st.columns([1, 3, 3])
     with sim_col:
-        run_sim = st.button("▶  Run Simulation", use_container_width=True)
+        run_sim = st.button("▶  Run Simulation", width='stretch')
 
     st.markdown("---")
 
@@ -560,7 +565,7 @@ with tab2:
                         font=dict(family="DM Sans")),
             margin=dict(t=70, b=50, l=50, r=20)
         )
-        st.plotly_chart(fig_comp, use_container_width=True)
+        st.plotly_chart(fig_comp, width='stretch')
 
     # ── LIVE SIMULATION ───────────────────────────────────────────────────────
     if run_sim:
@@ -664,7 +669,7 @@ with tab2:
                 height=380, plot_bgcolor="white", paper_bgcolor="white",
                 margin=dict(t=50, b=50, l=50, r=20)
             )
-            st.plotly_chart(fig_dist, use_container_width=True)
+            st.plotly_chart(fig_dist, width='stretch')
 
         with ch2:
             sorted_sc = np.sort(scores)
@@ -694,7 +699,7 @@ with tab2:
                 height=380, plot_bgcolor="white", paper_bgcolor="white",
                 margin=dict(t=50, b=50, l=50, r=20)
             )
-            st.plotly_chart(fig_cdf, use_container_width=True)
+            st.plotly_chart(fig_cdf, width='stretch')
 
         # Comparison vs baseline
         st.markdown("#### Your Scenario vs Baseline")
@@ -721,7 +726,7 @@ with tab2:
                         font=dict(family="DM Sans")),
             margin=dict(t=70, b=50, l=50, r=20)
         )
-        st.plotly_chart(fig_vs, use_container_width=True)
+        st.plotly_chart(fig_vs, width='stretch')
 
 # =============================================================================
 # FOOTER
