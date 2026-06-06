@@ -294,7 +294,6 @@ with tab1:
     col_left, col_spacer, col_right = st.columns([1, 0.08, 1])
 
     with col_left:
-        st.markdown('<div class="info-card">', unsafe_allow_html=True)
         st.markdown("**Personal & Physical Details**")
         ins_age = st.slider("Age (normalised 0–1)",    0.0, 1.0, 0.40, 0.01,
                             help="0 = youngest, 1 = oldest applicant in dataset")
@@ -306,10 +305,8 @@ with tab1:
         emp_info_1 = st.slider("Employment Info 1", 0.0, 1.0, 0.0, 0.01,
                                help="Strongest predictor — odds ratio 3.29 (Phase 2 finding)")
         ins_hist_1 = st.selectbox("Insurance History 1", [0, 1, 2, 3], index=0)
-        st.markdown('</div>', unsafe_allow_html=True)
 
     with col_right:
-        st.markdown('<div class="info-card">', unsafe_allow_html=True)
         st.markdown("**Medical History**")
         mh2 = st.selectbox("Medical History 2", [0, 1, 2, 3], index=0,
                             help="Chi-Square X²=7,346, p<0.001 — strongest statistical predictor")
@@ -324,7 +321,6 @@ with tab1:
             with (kc1 if i % 2 == 0 else kc2):
                 kw_values[kw] = int(st.checkbox(
                     kw.replace("Medical_Keyword_", "Keyword "), value=False))
-        st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown("")
     btn_col, _, _ = st.columns([1, 3, 3])
@@ -499,22 +495,16 @@ with tab2:
 
     ctrl1, ctrl2, ctrl3 = st.columns(3)
     with ctrl1:
-        st.markdown('<div class="info-card">', unsafe_allow_html=True)
         st.markdown("**Population Size**")
         n_sim = st.slider("Number of applicants", 1000, 10000, 5000, 500)
-        st.markdown('</div>', unsafe_allow_html=True)
     with ctrl2:
-        st.markdown('<div class="info-card">', unsafe_allow_html=True)
         st.markdown("**Age Adjustment**")
         age_shift = st.slider("Age shift (normalised)", -0.2, 0.2, 0.0, 0.01,
                               help="+0.125 ≈ ageing population by ~10 years")
-        st.markdown('</div>', unsafe_allow_html=True)
     with ctrl3:
-        st.markdown('<div class="info-card">', unsafe_allow_html=True)
         st.markdown("**BMI Adjustment**")
         bmi_shift_std = st.slider("BMI shift (std deviations)", -2.0, 2.0, 0.0, 0.1,
                                   help="+1 = one std dev higher BMI population")
-        st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown("")
     sim_col, _, _ = st.columns([1, 3, 3])
