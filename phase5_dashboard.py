@@ -118,7 +118,7 @@ with st.sidebar:
 # =============================================================================
 # MAIN TITLE
 # =============================================================================
-st.markdown('<p class="main-title">🏥 Actuarial Risk Pipeline</p>', unsafe_allow_html=True)
+st.markdown('<p style="font-size:2.6rem; font-weight:700; margin-bottom:0;">🏥 Actuarial Risk Pipeline</p>', unsafe_allow_html=True)
 st.markdown('<p class="main-subtitle">Predictive risk scoring and portfolio simulation for life insurance underwriting — Prudential Life Insurance Assessment</p>', unsafe_allow_html=True)
 st.markdown("---")
 
