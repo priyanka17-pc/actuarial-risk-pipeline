@@ -30,96 +30,26 @@ st.set_page_config(
 # ── CUSTOM CSS ───────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-
-/* ── SIDEBAR ONLY ── */
 [data-testid="stSidebar"] {
     background: linear-gradient(160deg, #0f1f3d 0%, #1a3560 100%);
-    border-right: 1px solid #2a4a7f;
-}
-[data-testid="stSidebar"] .stMarkdown p,
-[data-testid="stSidebar"] .stMarkdown li,
-[data-testid="stSidebar"] .stMarkdown span,
-[data-testid="stSidebar"] label {
-    color: #e8edf5 !important;
-}
-[data-testid="stSidebar"] h1,
-[data-testid="stSidebar"] h2,
-[data-testid="stSidebar"] h3,
-[data-testid="stSidebar"] strong {
-    color: #f0c040 !important;
 }
 [data-testid="stSidebar"] hr {
     border-color: #2a4a7f !important;
 }
-[data-testid="stSidebar"] em {
-    color: #c8d4e8 !important;
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, #0f1f3d, #1a3560) !important;
+    color: #f0c040 !important;
 }
-
-/* ── MAIN CONTENT TEXT ── */
-.main .stMarkdown p,
-.main .stMarkdown li,
-.main .stMarkdown h1,
-.main .stMarkdown h2,
-.main .stMarkdown h3 {
-    color: #0f1f3d !important;
-}
-
-/* ── BUTTONS ── */
 .stButton > button {
     background: linear-gradient(135deg, #0f1f3d 0%, #1a3560 100%) !important;
     color: #f0c040 !important;
     font-weight: 600 !important;
     border: none !important;
     border-radius: 8px !important;
-    padding: 12px 28px !important;
-    box-shadow: 0 4px 12px rgba(15,31,61,0.25) !important;
 }
-
-/* ── TABS ── */
-.stTabs [data-baseweb="tab-list"] {
-    background: white !important;
-    border-radius: 10px !important;
-    padding: 4px !important;
-    border: 1px solid #e0e6f0 !important;
-}
-.stTabs [data-baseweb="tab"] {
-    color: #5a6a8a !important;
-    border-radius: 8px !important;
-    padding: 10px 24px !important;
-}
-.stTabs [aria-selected="true"] {
-    background: linear-gradient(135deg, #0f1f3d, #1a3560) !important;
-    color: #f0c040 !important;
-}
-
-/* ── METRIC CARDS ── */
-[data-testid="metric-container"] {
-    background: white;
-    border: 1px solid #e0e6f0;
-    border-radius: 12px;
-    padding: 16px 20px !important;
-    box-shadow: 0 2px 8px rgba(15,31,61,0.06);
-}
-
-/* ── PAGE BACKGROUND ── */
 .stApp {
     background-color: #F7F8FC;
 }
-
-/* ── DIVIDER ── */
-hr {
-    border-color: #e0e6f0 !important;
-    margin: 24px 0 !important;
-}
-
-/* ── FOOTER ── */
-.footer-text {
-    text-align: center;
-    color: #9aa5be;
-    font-size: 0.82rem;
-    padding: 20px 0 8px 0;
-}
-
 </style>
 """, unsafe_allow_html=True)
 
